@@ -1,0 +1,33 @@
+{
+  "name": "get-attributes-uniforms",
+  "version": "0.0.1",
+  "description": "Get the attributes and uniforms from a GLSL shader string",
+  "main": "src/get-attributes-uniforms.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "standard && tape test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinedufn/get-attributes-uniforms.git"
+  },
+  "keywords": [
+    "glsl",
+    "attribute",
+    "uniform",
+    "parse",
+    "extract",
+    "token",
+    "shader",
+    "fragment",
+    "vertex",
+    "webgl"
+  ],
+  "author": "Chinedu Francis Nwafili <frankie.nwafili@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chinedufn/get-attributes-uniforms/issues"
+  },
+  "homepage": "https://github.com/chinedufn/get-attributes-uniforms#readme"
+}
