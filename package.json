@@ -4,7 +4,10 @@
   "description": "Get the attributes and uniforms from a GLSL shader string",
   "main": "src/get-attributes-uniforms.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "^8.6.0",
+    "tape": "^4.6.3"
+  },
   "scripts": {
     "test": "standard && tape test/**/*.js"
   },
