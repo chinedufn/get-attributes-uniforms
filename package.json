@@ -1,6 +1,6 @@
 {
   "name": "get-attributes-uniforms",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Get the attributes and uniforms from a GLSL shader string",
   "main": "src/get-attributes-uniforms.js",
   "dependencies": {},
