@@ -57,10 +57,10 @@ void main () {
 `
 
 console.log(getAttributesUniforms(fragmentShader))
-// { attributes: ['someAttrib'], uniforms: ['color'] }
+// { attributes: {someAttrib: 'mat4'}, uniforms: {color: 'vec4' } }
 
 console.log(getAttributesUniforms(vertexShader))
-// { attributes: ['position', 'foobar'], uniforms: [] }
+// { attributes: {position: 'vec2', foobar: 'vec4'}, uniforms: {} }
 ```
 ## API
 
@@ -83,6 +83,10 @@ void main() {
 }
 `
 ```
+
+## TODO:
+
+- [ ] Fix when shader code has comments above a uniform. Somehow got a uniform back called `uniform`
 
 ## See Also
 

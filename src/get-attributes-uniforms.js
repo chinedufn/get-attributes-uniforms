@@ -22,17 +22,19 @@ function getAttributesUniforms (shaderString) {
 
     // If we have an attribute or a uniform in this statement we add it to our list
     if (attribLocation !== -1) {
-      attrsAndUniforms.attributes.push(
-        // Find the token that comes two spots after our `attribute`
-        statement.trim().replace('\n', ' ').split(/[ ]+/)[2]
-      )
+      // Tokenize the attribute declaration.. ex: [attribute, vec3, position]
+      var attributeStatementTokens = statement.trim().replace('\n', ' ').split(/[ ]+/)
+      // The token that is one spot after `attribute` is the type (ex: vec2, vec4, ... etc)
+      // The token that comes two spots after our `attribute` is the name (ex: aVertexPosition, aVertexNormal...)
+      // So this turns into ex: attributes['position'] = 'vec3'
+      attrsAndUniforms.attributes[attributeStatementTokens[2]] = attributeStatementTokens[1]
     } else if (uniformLocation !== -1) {
-      attrsAndUniforms.uniforms.push(
-        // Find the token that comes two spots after our `uniform`
-        statement.trim().replace('\n', ' ').split(/[ ]+/)[2]
-      )
+      var uniformStatementTokens = statement.trim().replace('\n', ' ').split(/[ ]+/)
+      // The token that is one spot after `uniform` is the type (ex: vec2, vec4, ... etc)
+      // Find the token that comes two spots after our `uniform` (the name)
+      attrsAndUniforms.uniforms[uniformStatementTokens[2]] = uniformStatementTokens[1]
     }
 
     return attrsAndUniforms
-  }, {attributes: [], uniforms: []})
+  }, {attributes: {}, uniforms: {}})
 }

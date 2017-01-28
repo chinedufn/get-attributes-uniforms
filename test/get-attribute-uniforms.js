@@ -23,11 +23,16 @@ test('Parse uniforms and attributes', function (t) {
 
   t.deepEqual(getAttributesUniforms(fragmentShader), {
     attributes: [],
-    uniforms: ['color']
+    uniforms: {
+      color: 'vec4'
+    }
   }, 'Get the attributes and uniforms for the fragment shader')
 
   t.deepEqual(getAttributesUniforms(vertexShader), {
-    attributes: ['position', 'foobar'],
+    attributes: {
+      position: 'vec2',
+      foobar: 'vec4'
+    },
     uniforms: []
   }, 'Get the attributes and uniforms for the vertex shader')
   t.end()
