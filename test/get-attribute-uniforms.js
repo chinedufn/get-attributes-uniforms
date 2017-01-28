@@ -37,3 +37,23 @@ test('Parse uniforms and attributes', function (t) {
   }, 'Get the attributes and uniforms for the vertex shader')
   t.end()
 })
+
+test('Comment in shader', function (t) {
+  var fragmentShader = `
+   precision medium float;
+
+   // A comment
+   uniform vec4 color;
+
+  void main () {
+    gl_FragColor = color;
+  }
+  `
+  t.deepEqual(getAttributesUniforms(fragmentShader), {
+    attributes: [],
+    uniforms: {
+      color: 'vec4'
+    }
+  }, 'Get the attributes and uniforms for the fragment shader that has a comment')
+  t.end()
+})
